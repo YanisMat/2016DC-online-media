@@ -4,10 +4,39 @@
    <meta charset="utf-8">
    <title>Дом Наркомфина</title>
    <link rel="stylesheet" href="stylesheets/style.css">
+   <script src="JavaScript/jquery-3.1.1.js" charset="utf-8"></script>
+   <script src="javascript/sidebar.js" charset="utf-8"></script>
+
+   <script type="text/javascript">
+
+    $(function() {
+
+      $('.sidebar a').each(function() {
+
+        $(this).on('click', function(e) {
+
+          e.preventDefault();
+
+          var scrollTo = $(this).attr('href');
+          var whitespace = scrollTo == '#s1' ? 70 : 30
+
+           $('html,body').animate({
+            scrollTop: $(scrollTo).offset().top - whitespace
+          }, 1000);
+
+        });
+
+      });
+
+    });
+   </script>
+
   </head>
   <body>
 
-   <nav>
+
+
+   <nav class="sidebar">
      <ul>
        <li>
          <a href="#s1">Дом Наркомфина</a>
@@ -60,15 +89,15 @@
       </li>
 
        <li>
-         <a href="#6">Известные жители</a>
+         <a href="#s6">Известные жители</a>
        </li>
 
        <li>
-         <a href="S7">Современное состояние памятника</a>
+         <a href="#s7">Современное состояние памятника</a>
        </li>
 
        <li>
-         <a href="S8">Интересные факты о Доме Наркомфина</a>
+         <a href="#s8">Интересные факты о Доме Наркомфина</a>
        </li>
 
      </ul>
